@@ -1,0 +1,159 @@
+/* District Championship Page Specific Styles - Premium Redesign */
+
+:root {
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.section-padding {
+    padding: 20px 0;
+}
+
+/* Inner Banner */
+.inner-banner {
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+}
+
+.inner-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../images/tournaments_banner.png');
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+.banner-title {
+    font-family: var(--font-heading);
+    font-size: 56px;
+    font-weight: 800;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 2;
+}
+
+/* Grassroots Section */
+.grassroots-card {
+    background: var(--white);
+    padding: 50px;
+    border-radius: 40px;
+    box-shadow: var(--card-shadow);
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.grassroots-icon {
+    font-size: 80px;
+    color: var(--orange);
+    opacity: 0.8;
+}
+
+/* Trials Grid */
+.trials-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.trial-card {
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 25px;
+    border-left: 5px solid var(--primary);
+    transition: var(--transition);
+}
+
+.trial-card:hover {
+    background: var(--white);
+    transform: translateX(10px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.trial-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.trial-date {
+    background: var(--primary);
+    color: var(--white);
+    padding: 5px 15px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+/* Criteria List */
+.criteria-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.criteria-item {
+    padding: 20px;
+    background: var(--white);
+    border-radius: 20px;
+    border: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.criteria-item i {
+    color: var(--orange);
+    font-size: 20px;
+}
+
+/* Find Association */
+.find-box {
+    background: var(--primary);
+    padding: 60px;
+    border-radius: 40px;
+    color: var(--white);
+    text-align: center;
+}
+
+.search-field {
+    max-width: 600px;
+    margin: 30px auto 0;
+    display: flex;
+    gap: 15px;
+}
+
+.search-field input {
+    flex: 1;
+    padding: 15px 25px;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .trials-grid { grid-template-columns: 1fr; }
+    .criteria-list { grid-template-columns: 1fr; }
+    .grassroots-card { flex-direction: column; text-align: center; }
+}
+
+@media (max-width: 600px) {
+    .search-field { flex-direction: column; }
+    .banner-title { font-size: 36px; }
+}

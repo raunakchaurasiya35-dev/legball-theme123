@@ -1,0 +1,177 @@
+/* Tournament Results Page Specific Styles - Premium Redesign */
+
+:root {
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --card-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.section-padding {
+    padding: 100px 0;
+}
+
+/* Inner Banner */
+.inner-banner {
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+}
+
+.inner-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../images/hero_banner.png');
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+.banner-title {
+    font-family: var(--font-heading);
+    font-size: 56px;
+    font-weight: 800;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 2;
+}
+
+/* Result Grid */
+.results-archive {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.result-card {
+    background: var(--white);
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    border: 1px solid #f0f0f0;
+    transition: var(--transition);
+}
+
+.result-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--orange);
+}
+
+.result-header {
+    background: #f8f9fa;
+    padding: 25px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.result-year {
+    background: var(--primary);
+    color: var(--white);
+    padding: 5px 15px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.result-body {
+    padding: 30px;
+}
+
+.podium {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.podium-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 20px;
+    background: #fdfdfd;
+    border-radius: 15px;
+    border: 1px solid #eee;
+}
+
+.medal-icon {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: var(--white);
+}
+
+.gold { background: #ffd700; }
+.silver { background: #c0c0c0; }
+.bronze { background: #cd7f32; }
+
+/* Filter Bar */
+.results-filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.year-tabs {
+    display: flex;
+    gap: 10px;
+}
+
+.year-tab {
+    padding: 10px 25px;
+    border-radius: 20px;
+    background: #f0f0f0;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.year-tab.active {
+    background: var(--orange);
+    color: var(--white);
+}
+
+/* Standings */
+.standings-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+}
+
+.standings-table th {
+    text-align: left;
+    padding: 15px;
+    background: #f8f9fa;
+    color: var(--primary);
+}
+
+.standings-table td {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .results-archive { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+    .results-filter { flex-direction: column; align-items: stretch; }
+    .banner-title { font-size: 38px; }
+}

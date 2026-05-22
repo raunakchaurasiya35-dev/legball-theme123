@@ -1,0 +1,178 @@
+/* Downloads Page Specific Styles */
+
+.section-padding {
+    padding: 80px 0;
+}
+
+/* Inner Banner */
+.inner-banner {
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--white);
+    position: relative;
+}
+
+.breadcrumb {
+    font-family: var(--font-heading);
+    font-size: 14px;
+    background: rgba(0,0,0,0.4);
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.breadcrumb a {
+    color: var(--orange);
+    font-weight: 500;
+}
+
+.banner-title {
+    font-family: var(--font-heading);
+    font-size: 36px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+/* Update Box */
+.update-box {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border-left: 5px solid var(--orange);
+}
+
+.update-label {
+    background: var(--primary);
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.update-content {
+    flex: 1;
+}
+
+.update-content h3 {
+    font-family: var(--font-heading);
+    font-size: 20px;
+    color: var(--primary);
+    margin-bottom: 5px;
+}
+
+.update-content p {
+    font-size: 14px;
+    color: var(--gray);
+}
+
+/* Downloads Grid */
+.downloads-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.download-cat-card {
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    border: 1px solid var(--light-gray);
+}
+
+.cat-header {
+    background: var(--bg-light);
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.cat-header i {
+    font-size: 24px;
+    color: var(--orange);
+}
+
+.cat-header h3 {
+    font-family: var(--font-heading);
+    font-size: 18px;
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.file-list {
+    padding: 20px;
+    list-style: none;
+}
+
+.file-list li {
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.file-list li:last-child {
+    border-bottom: none;
+}
+
+.file-list li a {
+    display: flex;
+    flex-direction: column;
+    color: var(--dark);
+    font-weight: 500;
+    font-size: 15px;
+    transition: color 0.3s;
+}
+
+.file-list li a span {
+    font-size: 11px;
+    color: var(--gray);
+    margin-top: 5px;
+    font-weight: 400;
+}
+
+.file-list li a:hover {
+    color: var(--orange);
+}
+
+.file-list li a::after {
+    content: '\f019';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    right: 30px;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.file-list li {
+    position: relative;
+}
+
+.file-list li:hover a::after {
+    opacity: 1;
+    transform: translateY(5px);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .downloads-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .update-box {
+        flex-direction: column;
+        text-align: center;
+    }
+}

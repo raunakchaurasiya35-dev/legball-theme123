@@ -1,0 +1,220 @@
+/* About Page Specific Styles */
+
+.section-padding {
+    padding: 80px 0;
+}
+
+/* Inner Banner */
+.inner-banner {
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    color: var(--white);
+    position: relative;
+}
+
+.breadcrumb {
+    font-family: var(--font-heading);
+    font-size: 14px;
+    background: rgba(0,0,0,0.4);
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 4px;
+}
+
+.breadcrumb a {
+    color: var(--orange);
+    font-weight: 500;
+}
+
+.breadcrumb span {
+    color: var(--white);
+    margin-left: 5px;
+}
+
+/* About Grid */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.about-grid.reverse {
+    grid-template-columns: 1.2fr 1fr;
+}
+
+.about-image-box {
+    position: relative;
+}
+
+.main-about-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.image-label {
+    position: absolute;
+    bottom: -20px;
+    left: 20px;
+    right: 20px;
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 20px;
+    text-align: center;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 18px;
+    border-radius: 4px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Typography */
+.sub-title {
+    display: block;
+    color: var(--orange);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.main-title {
+    font-family: var(--font-heading);
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 25px;
+    line-height: 1.2;
+}
+
+.about-text-box p {
+    margin-bottom: 20px;
+    color: var(--gray);
+    font-size: 16px;
+    text-align: justify;
+}
+
+/* Checked List */
+.list-checked {
+    list-style: none;
+    padding: 0;
+    margin-top: 25px;
+}
+
+.list-checked li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 15px;
+    font-weight: 500;
+    color: var(--dark);
+}
+
+.list-checked li::before {
+    content: '\f00c';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--orange);
+    border: 2px solid var(--orange);
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Aims List */
+.aims-list {
+    list-style: none;
+    padding: 0;
+}
+
+.aims-list li {
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    color: var(--gray);
+    font-size: 15px;
+}
+
+.aims-list li i {
+    color: var(--orange);
+    margin-top: 4px;
+    flex-shrink: 0;
+}
+
+/* Strategy Section */
+.section-desc {
+    max-width: 900px;
+    margin-bottom: 40px;
+    color: var(--gray);
+}
+
+.strategy-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.strategy-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-left: 5px solid var(--orange);
+    transition: transform 0.3s;
+}
+
+.strategy-item:hover {
+    transform: translateX(10px);
+}
+
+.s-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--bg-light);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.strategy-item p {
+    margin: 0;
+    font-weight: 500;
+    color: var(--dark);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .about-grid, .about-grid.reverse {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .about-grid.reverse .about-image-box {
+        grid-row: 1;
+    }
+    
+    .main-title {
+        font-size: 28px;
+    }
+}

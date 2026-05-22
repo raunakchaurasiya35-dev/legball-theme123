@@ -1,0 +1,215 @@
+/* Vision & Mission Page Specific Styles - Premium Redesign */
+
+:root {
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --card-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.section-padding {
+    padding: 100px 0;
+}
+
+/* Inner Banner */
+.inner-banner {
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+}
+
+.inner-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(59, 22, 91, 0.9), rgba(242, 98, 34, 0.8)), url('../images/hero_banner.png');
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+.inner-banner .container {
+    position: relative;
+    z-index: 2;
+}
+
+.banner-title {
+    font-family: var(--font-heading);
+    font-size: 56px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+
+/* Vision Section */
+.vision-section {
+    background: var(--white);
+    position: relative;
+}
+
+.vision-box {
+    background: var(--primary);
+    color: var(--white);
+    padding: 80px;
+    border-radius: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    box-shadow: 0 30px 60px rgba(59, 22, 91, 0.3);
+    overflow: hidden;
+    position: relative;
+}
+
+.vision-box::after {
+    content: '\f06e';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    font-size: 300px;
+    color: rgba(255, 255, 255, 0.03);
+}
+
+.vision-content h2 {
+    font-size: 42px;
+    font-family: var(--font-heading);
+    color: var(--orange);
+    margin-bottom: 25px;
+}
+
+.vision-content p {
+    font-size: 20px;
+    line-height: 1.8;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.vision-image img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: var(--card-shadow);
+}
+
+/* Mission Section */
+.mission-section {
+    background: #f8f9fa;
+}
+
+.mission-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+.mission-card {
+    background: var(--white);
+    padding: 50px;
+    border-radius: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: var(--transition);
+    border-left: 10px solid var(--orange);
+}
+
+.mission-card:hover {
+    transform: translateX(10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.m-icon {
+    font-size: 40px;
+    color: var(--primary);
+    margin-bottom: 25px;
+}
+
+.mission-card h3 {
+    font-family: var(--font-heading);
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: var(--primary);
+}
+
+/* Strategic Goals */
+.goals-section {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.goals-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.goal-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 40px 30px;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    transition: var(--transition);
+}
+
+.goal-card:hover {
+    background: var(--orange);
+    border-color: var(--orange);
+    transform: translateY(-10px);
+}
+
+.goal-card i {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.goal-card h4 {
+    font-family: var(--font-heading);
+    font-size: 18px;
+}
+
+/* Quote Section */
+.quote-section {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../images/hero_banner.png');
+    background-attachment: fixed;
+    background-size: cover;
+    color: var(--white);
+    text-align: center;
+    padding: 120px 0;
+}
+
+.quote-box blockquote {
+    font-size: 32px;
+    font-family: var(--font-heading);
+    max-width: 800px;
+    margin: 0 auto;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.quote-box cite {
+    display: block;
+    margin-top: 20px;
+    font-size: 18px;
+    color: var(--orange);
+    font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .vision-box { grid-template-columns: 1fr; padding: 40px; }
+    .mission-grid { grid-template-columns: 1fr; }
+    .goals-grid { grid-template-columns: repeat(2, 1fr); }
+    .banner-title { font-size: 42px; }
+}
+
+@media (max-width: 576px) {
+    .goals-grid { grid-template-columns: 1fr; }
+    .quote-box blockquote { font-size: 24px; }
+}

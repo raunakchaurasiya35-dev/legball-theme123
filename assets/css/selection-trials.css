@@ -1,0 +1,173 @@
+/* Selection Trials Page Specific Styles - Premium Redesign */
+
+:root {
+    --card-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.section-padding {
+    padding: 100px 0;
+}
+
+/* Inner Banner */
+.inner-banner {
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+}
+
+.inner-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../images/hero_banner.png');
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+.banner-title {
+    font-family: var(--font-heading);
+    font-size: 56px;
+    font-weight: 800;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 2;
+}
+
+/* Trial Announcement Card */
+.trial-card {
+    background: var(--white);
+    border-radius: 30px;
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+    margin-bottom: 40px;
+    display: grid;
+    grid-template-columns: 250px 1fr 200px;
+    align-items: center;
+    transition: var(--transition);
+    border: 1px solid #f0f0f0;
+}
+
+.trial-card:hover {
+    transform: translateX(10px);
+    border-color: var(--orange);
+}
+
+.trial-date {
+    background: var(--primary);
+    color: var(--white);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    text-align: center;
+}
+
+.trial-date span {
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.trial-info {
+    padding: 40px;
+}
+
+.trial-status {
+    display: inline-block;
+    padding: 5px 20px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.status-active { background: #e8f5e9; color: #2e7d32; }
+.status-upcoming { background: #fff3e0; color: #e65100; }
+
+.trial-action {
+    padding: 40px;
+    text-align: right;
+}
+
+/* Selection Pathway */
+.pathway-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    position: relative;
+}
+
+.pathway-item {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.pathway-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--white);
+    border: 2px solid var(--orange);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 30px;
+    color: var(--primary);
+    transition: var(--transition);
+}
+
+.pathway-item:hover .pathway-icon {
+    background: var(--orange);
+    color: var(--white);
+    transform: scale(1.1);
+}
+
+/* Eligibility & Criteria */
+.criteria-card {
+    background: #f9f9f9;
+    padding: 40px;
+    border-radius: 30px;
+    height: 100%;
+    border-bottom: 5px solid var(--primary);
+}
+
+.criteria-list li {
+    margin-bottom: 15px;
+    display: flex;
+    gap: 10px;
+    font-size: 15px;
+}
+
+.criteria-list i {
+    color: var(--orange);
+    margin-top: 4px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .trial-card { grid-template-columns: 150px 1fr; }
+    .trial-action { grid-column: span 2; text-align: left; padding-top: 0; }
+    .pathway-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+    .trial-card { grid-template-columns: 1fr; }
+    .trial-date { padding: 40px; }
+    .trial-action { text-align: center; }
+    .pathway-grid { grid-template-columns: 1fr; }
+    .banner-title { font-size: 38px; }
+}

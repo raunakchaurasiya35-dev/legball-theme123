@@ -1,0 +1,165 @@
+/* Player Achievements Page Specific Styles - Premium Redesign */
+
+:root {
+    --gold: #FFD700;
+    --silver: #C0C0C0;
+    --bronze: #CD7F32;
+    --card-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.section-padding {
+    padding: 100px 0;
+}
+
+/* Inner Banner */
+.inner-banner {
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+}
+
+.inner-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../images/tournaments_banner.png');
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+.banner-title {
+    font-family: var(--font-heading);
+    font-size: 56px;
+    font-weight: 800;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 2;
+}
+
+/* Milestone Cards */
+.milestone-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.milestone-card {
+    background: var(--white);
+    padding: 50px 40px;
+    border-radius: 40px;
+    text-align: center;
+    box-shadow: var(--card-shadow);
+    transition: all 0.3s ease;
+    border: 1px solid #f0f0f0;
+}
+
+.milestone-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--gold);
+}
+
+.milestone-icon {
+    font-size: 60px;
+    margin-bottom: 25px;
+    background: linear-gradient(45deg, var(--primary), var(--orange));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Hall of Fame */
+.fame-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.fame-card {
+    background: var(--white);
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    text-align: center;
+}
+
+.fame-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: 0.5s;
+}
+
+.fame-card:hover .fame-img {
+    filter: grayscale(0%);
+}
+
+.fame-info {
+    padding: 25px;
+}
+
+.fame-title {
+    color: var(--orange);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+/* Stats Section */
+.stats-section {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-num {
+    font-size: 50px;
+    font-weight: 800;
+    color: var(--orange);
+    display: block;
+}
+
+/* Awards Table */
+.awards-table {
+    width: 100%;
+    background: var(--white);
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+}
+
+.awards-table th {
+    background: #f8f9fa;
+    padding: 25px;
+    text-align: left;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.awards-table td {
+    padding: 20px 25px;
+    border-top: 1px solid #eee;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .milestone-grid { grid-template-columns: repeat(2, 1fr); }
+    .fame-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+    .milestone-grid { grid-template-columns: 1fr; }
+    .fame-grid { grid-template-columns: 1fr; }
+    .banner-title { font-size: 38px; }
+}

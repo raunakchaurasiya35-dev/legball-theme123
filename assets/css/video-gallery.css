@@ -1,0 +1,199 @@
+/* Video Gallery Page Specific Styles - Premium Redesign */
+
+:root {
+    --video-primary: #0f172a;
+    --video-accent: #ff0000; /* YouTube Red */
+    --video-bg: #f8fafc;
+    --video-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.section-padding {
+    padding: 100px 0;
+}
+
+/* Inner Banner */
+.inner-banner {
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+}
+
+.inner-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('../images/nationalcham.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+.banner-title {
+    font-family: var(--font-heading);
+    font-size: 56px;
+    font-weight: 900;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 2;
+}
+
+/* Featured Video Card */
+.featured-video {
+    position: relative;
+    border-radius: 30px;
+    overflow: hidden;
+    height: 500px;
+    margin-bottom: 80px;
+    box-shadow: var(--video-shadow);
+}
+
+.featured-video img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+    text-align: center;
+    padding: 40px;
+}
+
+.play-btn-large {
+    width: 100px;
+    height: 100px;
+    background: var(--video-accent);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    margin-bottom: 30px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    border: 10px solid rgba(255, 255, 255, 0.2);
+}
+
+.featured-video:hover .play-btn-large {
+    transform: scale(1.1);
+    box-shadow: 0 0 50px rgba(255, 0, 0, 0.6);
+}
+
+/* Video Grid */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.video-card {
+    background: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.video-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.video-thumb {
+    position: relative;
+    height: 200px;
+}
+
+.video-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.play-icon-sm {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    background: rgba(0,0,0,0.7);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.video-card:hover .play-icon-sm {
+    background: var(--video-accent);
+}
+
+.video-info {
+    padding: 20px;
+}
+
+.video-cat {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--video-accent);
+    margin-bottom: 10px;
+    display: block;
+}
+
+.video-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--video-primary);
+    margin-bottom: 5px;
+    line-height: 1.4;
+}
+
+.video-duration {
+    font-size: 12px;
+    color: #94a3b8;
+}
+
+/* YouTube Call to Action */
+.yt-cta {
+    background: var(--video-primary);
+    color: var(--white);
+    border-radius: 30px;
+    padding: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 80px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .video-grid { grid-template-columns: repeat(2, 1fr); }
+    .featured-video { height: 400px; }
+}
+
+@media (max-width: 768px) {
+    .video-grid { grid-template-columns: 1fr; }
+    .yt-cta { flex-direction: column; text-align: center; gap: 30px; }
+    .banner-title { font-size: 42px; }
+}

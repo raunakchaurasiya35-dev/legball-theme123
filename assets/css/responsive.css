@@ -1,0 +1,338 @@
+/* ==========================================
+   Legball Federation - Premium Responsive Styles
+   ========================================== */
+
+/* --- Variable Overrides for Responsive --- */
+:root {
+    --container-padding: 50px;
+}
+
+/* 1. Ultra Wide Desktop (1920px and above) */
+@media (min-width: 1920px) {
+    .container {
+        max-width: 1800px;
+    }
+    
+    .hero-content h1 {
+        font-size: 64px;
+    }
+    
+    .section-title {
+        font-size: 36px;
+    }
+}
+
+/* 2. Large Desktop (1440px - 1919px) */
+@media (min-width: 1440px) and (max-width: 1919px) {
+    .container {
+        max-width: 1360px;
+    }
+}
+
+/* 3. Laptop & Small Desktop (1025px - 1439px) */
+@media (max-width: 1439px) {
+    :root {
+        --container-padding: 40px;
+    }
+    
+    .container {
+        padding: 0 var(--container-padding);
+    }
+    
+    .nav-links > li > a {
+        padding: 15px 8px;
+        font-size: 12px;
+    }
+}
+
+/* 4. Tablet Landscape & Small Laptops (769px - 1024px) */
+@media (max-width: 1024px) {
+    body {
+        padding-top: 150px; /* Adjusted for stacking */
+    }
+
+    .header-container {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .main-nav {
+        top: 135px;
+    }
+
+    .logo-box {
+        justify-content: center;
+    }
+
+    .header-right {
+        justify-content: center;
+    }
+
+    .nav-links > li > a {
+        font-size: 11px;
+        padding: 12px 6px;
+    }
+
+    .hero {
+        height: 450px;
+    }
+
+    .hero-content h1 {
+        font-size: 36px;
+    }
+
+/* --- Components & Grids Scaling --- */
+    .obj-grid, .cs-grid, .about-grid, .fed-grid, .values-grid, .tourney-grid, .contact-grid {
+        grid-template-columns: 1fr !important;
+        gap: 30px;
+    }
+
+    .about-grid.reverse .about-image-box {
+        grid-row: 1;
+    }
+
+    .timeline-wrapper {
+        display: none;
+    }
+
+    .stats-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .inner-banner {
+        height: 200px;
+    }
+
+    .section-padding {
+        padding: 50px 0;
+    }
+}
+
+/* 5. Tablet Portrait (601px - 768px) */
+@media (max-width: 768px) {
+    :root {
+        --container-padding: 30px;
+    }
+
+    body {
+        padding-top: 90px;
+    }
+
+    .header {
+        padding: 10px 0;
+    }
+
+    .header-right {
+        display: none; /* Hide secondary logos to save space */
+    }
+
+    .logo-img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .logo-text h1 {
+        font-size: 18px;
+    }
+
+    .logo-text p {
+        font-size: 11px;
+    }
+
+    /* Navigation Mobile */
+    .menu-toggle {
+        display: block !important;
+        background: transparent;
+        border: none;
+        color: var(--white);
+        font-size: 24px;
+        cursor: pointer;
+        padding: 15px 0;
+    }
+
+    .main-nav {
+        top: 80px;
+    }
+
+    .nav-container {
+        justify-content: space-between;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--primary);
+        max-height: 80vh;
+        overflow-y: auto;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links > li {
+        width: 100%;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .nav-links > li > a {
+        padding: 15px 25px;
+        font-size: 14px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .dropdown {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        display: none;
+        background-color: rgba(0,0,0,0.2);
+        box-shadow: none;
+        border-top: none;
+        width: 100%;
+    }
+
+    .has-drop.active .dropdown {
+        display: block;
+    }
+
+    .dropdown li a {
+        padding: 12px 40px;
+        color: rgba(255,255,255,0.8);
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    /* Hero */
+    .hero {
+        height: 400px;
+    }
+
+    .hero-content h1 {
+        font-size: 32px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    /* Components */
+    .leader-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .leader-card {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .init-card {
+        flex-direction: column;
+    }
+
+    .gal-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gal-subgrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .footer-links-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+}
+
+/* 6. Small Mobile (Up to 600px) */
+@media (max-width: 600px) {
+    :root {
+        --container-padding: 20px;
+    }
+
+    .section-title {
+        font-size: 22px;
+    }
+
+    .hero-content h1 {
+        font-size: 28px;
+    }
+
+    .hero-content p {
+        font-size: 15px;
+    }
+
+    .stats-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .gal-subgrid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-links-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-top {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .f-logo {
+        flex-direction: column;
+    }
+
+    .reports-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 7. Extra Small Mobile (Up to 375px) */
+@media (max-width: 375px) {
+    .logo-text h1 {
+        font-size: 16px;
+    }
+    
+    .hero-content h1 {
+        font-size: 24px;
+    }
+
+    .btn {
+        padding: 10px 15px;
+        font-size: 12px;
+    }
+}
+
+/* --- Accessibility & Utilities Fixes --- */
+.overflow-hidden {
+    overflow: hidden;
+}
+
+/* Ensure images don't cause overflow */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Fix for horizontal scroll on some devices */
+.header, footer {
+    width: 100%;
+    overflow-x: hidden;
+}
